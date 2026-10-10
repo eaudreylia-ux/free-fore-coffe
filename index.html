@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamu Kena Prank! 😂</title>
+
+    <title>Kamu Kena Prank! 💀</title>
 
     <style>
         * {
@@ -14,96 +15,80 @@
 
         body {
             min-height: 100vh;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            font-family: Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #ffde59, #ff914d);
-            color: #222;
+
+            padding: 20px;
         }
 
-        .card {
-            max-width: 500px;
+        .container {
             width: 100%;
-            padding: 40px 25px;
-            background: white;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: muncul 0.7s ease;
-        }
-
-        .emoji {
-            font-size: 90px;
-            margin-bottom: 20px;
+            max-width: 600px;
         }
 
         h1 {
-            font-size: 38px;
-            margin-bottom: 15px;
-            color: #ff4b2b;
+            font-size: clamp(30px, 7vw, 52px);
+            margin-bottom: 25px;
+            color: #ff3b3b;
+            font-weight: 900;
         }
 
-        .subtitle {
-            font-size: 19px;
-            margin-bottom: 25px;
-            line-height: 1.6;
+        .prank-gif {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            margin: 0 auto 25px;
+            border-radius: 12px;
         }
 
-        .meme {
-            background: #fff0c2;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 1.6;
+        .message {
+            font-size: clamp(18px, 4vw, 25px);
+            line-height: 1.7;
+            color: #ffffff;
+        }
+
+        .emoji {
+            font-size: 35px;
+            margin-top: 15px;
         }
 
         .footer {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.7;
-        }
-
-        @keyframes muncul {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            margin-top: 30px;
+            font-size: 13px;
+            color: #888888;
         }
     </style>
 </head>
 
 <body>
-    <div class="card">
 
-        <div class="emoji">🤡💀</div>
+    <main class="container">
 
-        <h1>KAMU KENA PRANK!</h1>
+        <h1>KAMU KENA PRANK! 💀</h1>
 
-        <p class="subtitle">
-            WKWKWKWK 😭😭😭<br>
-            Kirain beneran gratis, ya?!
+        <img
+            src="./prank%20gif.gif"
+            alt="Prank GIF"
+            class="prank-gif"
+        >
+
+        <p class="message">
+            Maap ya guys 😭🙏<br>
+            Ini buat tugas hehehe 🤣
         </p>
-
-        <div class="meme">
-            BRO REALLY SCANNED THE QR CODE 💀<br><br>
-            🤡🤡🤡
-        </div>
-
+        
         <p class="footer">
-            HAHAHAHA tenang, ini cuma prank kok! 😂<br><br>
-            <strong>Website ini dibuat untuk tugas kuliah hehehhe 🤭</strong><br><br>
-            Jangan lupa, selalu periksa tautan sebelum membuka
-            QR code atau link yang mencurigakan! 🔐
+            Cybersecurity Awareness Assignment
         </p>
 
-    </div>
+    </main>
+
 </body>
 </html>
