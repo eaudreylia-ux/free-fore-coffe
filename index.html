@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kamu Kena Prank! 💀</title>
+    <title>Awas Phishing! | Cyber Awareness</title>
 
     <style>
         * {
@@ -13,82 +14,424 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg: #070b14;
+            --card: #101827;
+            --red: #ff4757;
+            --green: #39e6a0;
+            --text: #f4f7ff;
+            --muted: #a0aec0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            min-height: 100vh;
-            background-color: #000000;
-            color: #ffffff;
+            background: var(--bg);
+            color: var(--text);
             font-family: Arial, sans-serif;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            padding: 20px;
+            line-height: 1.7;
         }
 
         .container {
-            width: 100%;
-            max-width: 600px;
+            width: min(1080px, 90%);
+            margin: auto;
+        }
+
+        nav {
+            padding: 22px 0;
+            border-bottom: 1px solid #202a3b;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .status {
+            color: var(--green);
+            font-size: 12px;
+            border: 1px solid #246b53;
+            padding: 5px 12px;
+            border-radius: 30px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 0 60px;
+        }
+
+        .warning {
+            display: inline-block;
+            padding: 7px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #71313c;
+            border-radius: 30px;
+            background: #28131c;
+            color: #ff7582;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         h1 {
-            font-size: clamp(30px, 7vw, 52px);
-            margin-bottom: 25px;
-            color: #ff3b3b;
+            font-size: clamp(34px, 6vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 20px;
             font-weight: 900;
         }
 
-        .prank-gif {
+        h1 span {
+            color: var(--red);
+        }
+
+        .hero-description {
+            max-width: 670px;
+            margin: 0 auto 30px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .hero-image {
             display: block;
             width: 100%;
-            max-width: 450px;
+            max-width: 430px;
             height: auto;
-            margin: 0 auto 25px;
-            border-radius: 12px;
+            margin: 0 auto 30px;
+            border-radius: 16px;
+            border: 1px solid #283449;
         }
 
-        .message {
-            font-size: clamp(18px, 4vw, 25px);
-            line-height: 1.7;
-            color: #ffffff;
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 23px;
+            border-radius: 9px;
+            background: var(--red);
+            color: white;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
-        .emoji {
-            font-size: 35px;
-            margin-top: 15px;
+        .button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
         }
 
-        .footer {
+        .section {
+            padding: 55px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(25px, 4vw, 36px);
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #263247;
+            border-radius: 15px;
+            padding: 24px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #53647c;
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .solutions {
+            background: #0c1320;
+            border-top: 1px solid #202a3b;
+            border-bottom: 1px solid #202a3b;
+        }
+
+        .solution-card {
+            background: #101c25;
+            border-color: #235542;
+        }
+
+        .solution-card h3 {
+            color: var(--green);
+        }
+
+        .number {
+            display: inline-flex;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #194634;
+            color: var(--green);
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+
+        .alert-box {
             margin-top: 30px;
-            font-size: 13px;
-            color: #888888;
+            padding: 22px;
+            border-radius: 12px;
+            border-left: 4px solid var(--red);
+            background: #21141c;
+        }
+
+        .alert-box h3 {
+            margin-bottom: 8px;
+            color: #ff7582;
+        }
+
+        .alert-box p {
+            color: #d3d9e5;
+            font-size: 14px;
+        }
+
+        .closing {
+            text-align: center;
+            padding: 65px 0;
+        }
+
+        .closing h2 {
+            font-size: clamp(25px, 4vw, 38px);
+            margin-bottom: 12px;
+        }
+
+        .closing p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        footer {
+            border-top: 1px solid #202a3b;
+            text-align: center;
+            padding: 22px 10px;
+            color: #778397;
+            font-size: 12px;
+        }
+
+        @media (max-width: 760px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .card {
+                padding: 22px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <main class="container">
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">CYBER<span>SAFE</span> 🛡️</div>
+            <div class="status">● SECURITY AWARENESS</div>
+        </div>
+    </nav>
 
-        <h1>KAMU KENA PRANK!</h1>
+    <main>
+        <section class="hero">
+            <div class="container">
 
-       <img
-    src="./prank.gif"
-    alt="Meme prank"
-    class="prank-gif"
->
+                <div class="warning">
+                    ⚠ WASPADA ANCAMAN DIGITAL
+                </div>
 
-        <p class="message">
-            Maap ya guys 😭🙏<br>
-            Ini buat tugas hehehe 🤣
-        </p>
-        
-        <p class="footer">
-            Cybersecurity Awareness Assignment
-        </p>
+                <h1>
+                    AWAS! JANGAN SAMPAI<br>
+                    KAMU <span>KENAKAN PHISHING.</span>
+                </h1>
 
+                <p class="hero-description">
+                    Satu klik yang salah bisa membuat data pribadimu
+                    jatuh ke tangan orang lain. Kenali ancamannya
+                    sebelum terlambat!
+                </p>
+
+                <img
+                    src="./prank.gif"
+                    alt="Ilustrasi untuk edukasi keamanan digital"
+                    class="hero-image"
+                >
+
+                <a href="#tips" class="button">
+                    Pelajari Cara Melindungi Diri ↓
+                </a>
+
+            </div>
+        </section>
+
+        <section class="section" id="tips">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>🚨 Kenali Tanda-Tanda Phishing</h2>
+                    <p>Jangan terburu-buru mengeklik sesuatu.</p>
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+                        <div class="icon">🔗</div>
+                        <h3>Link Mencurigakan</h3>
+                        <p>
+                            Periksa alamat website dengan teliti.
+                            Penipu bisa menggunakan domain yang mirip
+                            dengan situs resmi.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">⏰</div>
+                        <h3>Pesan Mendesak</h3>
+                        <p>
+                            Waspadai pesan seperti "Akunmu akan
+                            diblokir!" atau "Klaim hadiah sekarang!"
+                            yang memaksamu bertindak cepat.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">🔐</div>
+                        <h3>Meminta Data Rahasia</h3>
+                        <p>
+                            Jangan berikan kata sandi, PIN, atau kode
+                            OTP melalui tautan dan pesan yang tidak
+                            dapat dipercaya.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section solutions">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>🛡️ Cara Agar Tidak Terkena Phishing</h2>
+                    <p>Kebiasaan sederhana yang bisa melindungi akunmu.</p>
+                </div>
+
+                <div class="grid">
+
+                    <article class="card solution-card">
+                        <div class="number">1</div>
+                        <h3>Periksa Sebelum Klik</h3>
+                        <p>
+                            Pastikan alamat pengirim dan domain website
+                            benar. Jika ragu, buka situs resmi secara
+                            langsung melalui browser.
+                        </p>
+                    </article>
+
+                    <article class="card solution-card">
+                        <div class="number">2</div>
+                        <h3>Aktifkan MFA</h3>
+                        <p>
+                            Gunakan autentikasi multifaktor agar akun
+                            memiliki perlindungan tambahan selain
+                            kata sandi.
+                        </p>
+                    </article>
+
+                    <article class="card solution-card">
+                        <div class="number">3</div>
+                        <h3>Gunakan Password Unik</h3>
+                        <p>
+                            Buat kata sandi yang kuat dan berbeda
+                            untuk setiap akun. Gunakan password manager
+                            bila memungkinkan.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="alert-box">
+                    <h3>⚠️ Terlanjur Mengeklik Link Mencurigakan?</h3>
+                    <p>
+                        Jangan panik. Tutup halaman tersebut jika
+                        mencurigakan. Jika kamu memasukkan kata sandi,
+                        segera ganti melalui situs atau aplikasi resmi
+                        dari perangkat yang aman. Jika kode OTP, data
+                        bank, atau informasi pembayaran ikut diberikan,
+                        hubungi penyedia layanan atau bank melalui
+                        saluran resmi. Periksa aktivitas akun dan
+                        aktifkan autentikasi multifaktor. Jika file
+                        terunduh atau perangkat menunjukkan perilaku
+                        aneh, lakukan pemindaian keamanan.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="closing">
+            <div class="container">
+                <h2>Think Before You Click. 💻</h2>
+
+                <p>
+                    Keamanan digital dimulai dari kebiasaanmu sendiri.
+                    Berhenti sejenak, periksa, lalu pastikan.
+                </p>
+
+                <a href="#tips" class="button">
+                    Ingat Tips Keamanan ↑
+                </a>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        Cybersecurity Awareness Assignment · Stay Alert, Stay Safe 🛡️
+    </footer>
 
 </body>
 </html>
